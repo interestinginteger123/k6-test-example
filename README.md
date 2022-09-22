@@ -4,7 +4,7 @@ To get up and running quickly open in `devcontainer` within VS Code (Does not in
 
 ## Environment Variables
 
-* `ENDPOINT`: API endpoint to test, such as <https://api.rewards.com>.
+* `ENDPOINT`: API endpoint to test, such as <https://api.com>.
 
 ## Running test suites
 

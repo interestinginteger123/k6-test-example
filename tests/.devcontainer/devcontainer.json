@@ -1,0 +1,23 @@
+{
+	"name": "performance-k6",
+	"image": "loadimpact/k6",
+	// Ideally we would like to mont the .ssh at .ssh
+	// but windows file permissions makes all the files globally readble
+	// so the solution is to mount it somewhere they can be copied and permissions fixed
+	"mounts": [
+		"source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+	],
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/sh",
+		"terraform.languageServer": {
+			"external": true,
+			"pathToBinary": "/usr/local/bin/terraform-lsp",
+		}
+	},
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"mjacobson.snippets-for-k6",
+		"k6.k6"
+	]
+}

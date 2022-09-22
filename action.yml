@@ -1,0 +1,16 @@
+name: "K6 Functional Tests"
+description: "A set of functional tests which run against key endpoints"
+
+inputs:
+  endpoint: # id of input
+    description: "endpoint"
+    required: true
+    default: "https://dev.com"
+outputs:
+  performance-test-output: # id of output
+    description: "Output"
+runs:
+  using: "docker"
+  image: "docker/Dockerfile"
+  args:
+    - ${{ inputs.endpoint }}
